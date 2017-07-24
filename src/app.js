@@ -8,5 +8,5 @@ let dataService = new FleetDataService();
 dataService.loadData(fleet);
 
 for (let e of dataService.errors) {
-	console.log(e.message)
+	console.log(e)
 }

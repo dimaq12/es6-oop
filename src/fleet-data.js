@@ -17,7 +17,7 @@ export let fleet = [
     },
     {
         license: 'QRS678',
-        type: 'ddrone',
+        type: 'drone',
         model: 'Google 3800',
         airTimeHours: '300',
         base: 'New York',
