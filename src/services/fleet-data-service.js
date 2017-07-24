@@ -23,7 +23,7 @@ export class FleetDataService{
 					break;
 				default: 
 					let e  = new DataError('Invalid Vehicle Type', data);
-					this.errors.push(data);
+					this.errors.push(e);
 					break;
 			}
 		}
