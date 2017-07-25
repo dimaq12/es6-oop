@@ -25,9 +25,9 @@ export class FleetDataService{
 					break;
 				case 'drone':
 					if(this.validateDroneData(data)){
-						let drone = this.loadCar(data);
+						let drone = this.loadDrone(data);
 						if(drone)
-							this.cars.push(drone);
+							this.drones.push(drone);
 					} else {
 						let e = new DataError('Invalid Car Data', data);
 						this.errors.push(e);
@@ -39,6 +39,24 @@ export class FleetDataService{
 					break;
 			}
 		}
+	}
+
+	getCarByLicense(license){
+		return this.cars.find(function(car){
+			return car.license === license;
+		})
+	}
+
+	getCarsSortByLicense(){
+		return this.cars.sort(function(car1, car2){
+			if(car1.license < car2.license){
+				return -1;
+			} else if(car1.license > car2.license){
+				return 1;
+			} else {
+				return 0;
+			}
+		})
 	}
 
 	loadCar(car){
