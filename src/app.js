@@ -9,3 +9,4 @@ dataService.loadData(fleet);
 
 console.log(dataService.getCarByLicense('AT9900'));
 console.log(dataService.getCarsSortByLicense());
+console.log(dataService.filterCarsByMake('U'));

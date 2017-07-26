@@ -59,6 +59,12 @@ export class FleetDataService{
 		})
 	}
 
+	filterCarsByMake(filter){
+		// its work but in some cases can be couse of errors
+		//return this.cars.filter(car => !car.make.indexOf(filter));
+		return this.cars.filter(car => !car.make.indexOf(filter) >= 0);
+	}
+
 	loadCar(car){
 		try {
 			let c  = new Car(car.license, car.model, car.latLong)
