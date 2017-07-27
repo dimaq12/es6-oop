@@ -1,12 +1,17 @@
+// import $ from "jquery";
+
 import {Car} from './classes/car.js';
 import {Drone} from './classes/drone.js';
 import {fleet} from './fleet-data.js';
 import {FleetDataService} from './services/fleet-data-service.js';
 
+import {TitleBar} from "./ui/title-bar.js";
+import {Button} from "./ui/button.js";
+import {Image} from "./ui/image.js";
 
-let dataService = new FleetDataService();
-dataService.loadData(fleet);
+let titleBar = new TitleBar('Click Me');
+titleBar.appendToElement($('body'));
 
-console.log(dataService.getCarByLicense('AT9900'));
-console.log(dataService.getCarsSortByLicense());
-console.log(dataService.filterCarsByMake('U'));
+
+// let im = new Image('src/images/drone.jpg');
+// im.appendToElement($('body'));
